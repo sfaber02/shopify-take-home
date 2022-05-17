@@ -32,7 +32,15 @@ const App = () => {
 
               axios(config)
                 .then(function (response) {
-                console.log(response.data);
+                setResponses(prev => 
+                    [
+                        {
+                            prompt: e.target.textInput.value, 
+                            response: response.data.choices[0].text
+                        }, 
+                        ...prev
+                    ])
+                console.log(response.data.choices[0].text);
             })
             .catch(function (error) {
                 console.log(error);
@@ -51,6 +59,15 @@ const App = () => {
                 <input type='textarea' id='textInput' />
                 <input type='submit'  id='submitButton' />
                 <h1>Responses</h1>
+                {responses.map(e => {
+                    return (
+                        <div>
+                            {e.prompt}
+                            <br />
+                            {e.response}
+                        </div>
+                    )
+                })}
 
             </form>
             
@@ -60,16 +77,3 @@ const App = () => {
 
 export { App };
 
-
-
-/* 
-const { Configuration, OpenAIApi } = require("openai");
-const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-const openai = new OpenAIApi(configuration);
-const response = await openai.createCompletion("curie", {
-  prompt: "Say this is a test",
-  max_tokens: 5,
-});
-*/
