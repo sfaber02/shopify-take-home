@@ -24,7 +24,7 @@ html, body {
     background-color: black;
     margin: 0px;
     min-height: 100%;
-    max-width: 1024px;
+    width: 1024px;
 }
 
 h1 {

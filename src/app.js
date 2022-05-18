@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import './style.css';
 
+// Set local storage key and load saved responses (if there are any)
 const LOCAL_STORAGE_KEY = 'hal.responses';
 let storedResponses = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
 console.log(storedResponses);
@@ -42,8 +43,10 @@ const App = () => {
                 data : data
               };
 
+              //API post call
               axios(config)
                 .then(function (response) {
+                //add new response to responses state
                 setResponses(prev => 
                     [
                         {
@@ -61,7 +64,7 @@ const App = () => {
         }
     }
 
-    //store new responses in local storage
+    //store new responses in local storage when responses state changes
     useEffect(() => {
         console.log ('1');
         localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(responses));
@@ -75,8 +78,7 @@ const App = () => {
         <div id='mainContainer'>
             <h1>HAL 9001</h1>
             <form onSubmit={handleSubmit} id='inputForm'>
-                <label>Enter Prompt</label>
-                <input type='textarea' id='textInput' />
+                <input type='textarea' id='textInput' placeholder='Enter prompt here!'/>
                 <input type='submit'  id='submitButton' />
             </form>
             {responses.length > 0 &&
