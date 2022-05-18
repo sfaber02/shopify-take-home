@@ -66,10 +66,10 @@ const App = () => {
                 <div id="responseContainer">
                     {responses.map(e => {
                         return (
-                            <div key={Date.now()} className="reponses">
-                                {e.prompt}
+                            <div key={Date.now()} className="responses">
+                                <p>{e.prompt}</p>
                                 <br />
-                                {e.response}
+                                <p>{e.response}</p>
                             </div>
                         )
                     })}    

@@ -19,14 +19,10 @@ html, body {
     background-attachment: fixed;
     background-size: cover;
     background-color: rgba(25, 25, 35, .2);
-
-    margin: 5px;
-    border-radius: 5px;
+    margin: 0px;
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
     height: 100%;
-    border: 1px solid yellow;
 }
 
 h1 {
@@ -66,9 +62,22 @@ label {
 
 #responseContainer {
     display: flex;
+    height: 60%;
     flex-direction: column;
     justify-content: space-around;
     background-color: rgba(14,121,178,.5);
     margin: 5px 20px;
     border-radius: 5px;
+}
+
+.responses {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(25,25,35,.5);
+    margin: 5px 20px;
+    border: 1px solid yellow;
+}
+
+.responses p {
+    margin: 2px 5px;
 }
