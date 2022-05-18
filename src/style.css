@@ -1,3 +1,74 @@
+html, body {
+    /* background-color: #fbfef9; */
+    font-family: monospace;
+    height: 100%;
+    margin: 0px;
+    color: #bf1363;
+    /* border: 1px solid purple; */
+}
+
+#root {
+    height: 100%;
+    margin: 0px;
+    /* border: 1px solid purple; */
+}
+
+#mainContainer {
+    background-image: url("./graphics/merlin_135847308_098289a6-90ee-461b-88e2-20920469f96a-jumbo.webp");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: rgba(25, 25, 35, .2);
+
+    margin: 5px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    height: 100%;
+    border: 1px solid yellow;
+}
+
 h1 {
-    color: blue;
+    color: #bf1363;
+    font-size: 60px;
+    margin: 0px;
+    text-align: center;
+}
+
+#inputForm {
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: rgba(14,121,178,.5);
+    margin: 20px;
+    border-radius: 5px;
+}
+
+label {
+    font-size: 20px;
+    text-align: center;
+}
+
+#textInput {
+    height: 80%;
+    margin: 10px;
+    border-radius: 5px;
+    border: 0px;
+}
+
+#submitButton {
+    width: 10%;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+#responseContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: rgba(14,121,178,.5);
+    margin: 5px 20px;
+    border-radius: 5px;
 }

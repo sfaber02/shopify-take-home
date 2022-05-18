@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+
 import './style.css';
 
 const App = () => {
     //State for storing responses from API
     const [responses, setResponses] = useState(() => []);
 
-
+    //click handler for submit button
     const handleSubmit = async e => {
         e.preventDefault();
         if (e.target.textInput.value) {
+
+            //body for API post request
             const data = JSON.stringify({
                 "prompt": e.target.textInput.value,
                 "max_tokens": 2000,
@@ -20,6 +23,7 @@ const App = () => {
                 "presence_penalty": 0
               });
               
+              //axious config object API post request
               const config = {
                 method: 'post',
                 url: 'https://api.openai.com/v1/engines/text-curie-001/completions',
@@ -40,12 +44,11 @@ const App = () => {
                         }, 
                         ...prev
                     ])
-                console.log(response.data.choices[0].text);
+                    e.target.textInput.value = '';  
             })
             .catch(function (error) {
                 console.log(error);
             });
-                
         } else {
             return;
         }
@@ -53,24 +56,25 @@ const App = () => {
 
     return (
         <div id='mainContainer'>
-            <h1>Fun with AI</h1>
-            <form onSubmit={handleSubmit}>
+            <h1>HAL 9001</h1>
+            <form onSubmit={handleSubmit} id="inputForm">
                 <label>Enter Prompt</label>
-                <input type='textarea' id='textInput' />
+                <input type='textarea' id='textInput' rows="10" cols="50" />
                 <input type='submit'  id='submitButton' />
-                <h1>Responses</h1>
-                {responses.map(e => {
-                    return (
-                        <div>
-                            {e.prompt}
-                            <br />
-                            {e.response}
-                        </div>
-                    )
-                })}
-
             </form>
-            
+            {responses.length > 0 &&
+                <div id="responseContainer">
+                    {responses.map(e => {
+                        return (
+                            <div key={Date.now()} className="reponses">
+                                {e.prompt}
+                                <br />
+                                {e.response}
+                            </div>
+                        )
+                    })}    
+                </div>
+            }
         </div>
     )
 }
