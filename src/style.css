@@ -1,10 +1,10 @@
 html, body {
-    /* background-color: black; */
+    background-color: black;
     font-family: monospace;
+    font-size: 15px;
     height: 100%;
     margin: 0px;
     color: white;
-    /* border: 1px solid purple; */
 }
 
 #root {
@@ -12,7 +12,6 @@ html, body {
     margin: 0px;
     display: flex;
     justify-content: center;
-    border: 5px solid purple;
 }
 
 #mainContainer {
@@ -20,12 +19,12 @@ html, body {
     flex-direction: column;
     background-image: url("./graphics/merlin_135847308_098289a6-90ee-461b-88e2-20920469f96a-jumbo.webp");
     background-repeat: no-repeat;
-    /* background-attachment: fixed; */
+    background-size: cover;
+    background-attachment: fixed;
     background-color: black;
     margin: 0px;
     min-height: 100%;
     max-width: 1024px;
-    border: 5px solid yellow;
 }
 
 h1 {
@@ -36,7 +35,7 @@ h1 {
 }
 
 #inputForm {
-    height: 20%;
+    height: 20vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -52,15 +51,28 @@ label {
 
 #textInput {
     height: 80%;
-    margin: 10px;
+    background-color: rgba(25,25,35,.5);
+    color: white;
+    border-radius: 5px;
+    margin: 20px;
     border-radius: 5px;
     border: 0px;
 }
 
 button, #submitButton {
-    width: 10%;
+    width: 150px;
     margin: auto;
     margin-bottom: 10px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+}
+
+button:hover, #submitButton:hover {
+    background-color: #FAFF00;
+    color: black;
+    /* padding: 15px; */
 }
 
 #responseContainer {
@@ -83,4 +95,12 @@ button, #submitButton {
 
 .responses p {
     margin: 2px 5px;
+}
+
+#promptP {
+    margin-top: 20px;
+}
+
+#responseP {
+    margin-bottom: 20px;
 }

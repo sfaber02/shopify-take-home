@@ -74,7 +74,7 @@ const App = () => {
     return (
         <div id='mainContainer'>
             <h1>HAL 9001</h1>
-            <form onSubmit={handleSubmit} id="inputForm">
+            <form onSubmit={handleSubmit} id='inputForm'>
                 <label>Enter Prompt</label>
                 <input type='textarea' id='textInput' />
                 <input type='submit'  id='submitButton' />
@@ -84,9 +84,9 @@ const App = () => {
                     {responses.map(e => {
                         return (
                             <div key={uuidv4()} className="responses">
-                                <p>Prompt: {e.prompt}</p>
+                                <p id="promptP"><strong>PROMPT:</strong> {e.prompt}</p>
                                 <br />
-                                <p>Response: {e.response}</p>
+                                <p id='responseP'><strong>RESPONSE:</strong> {e.response}</p>
                             </div>
                         )
                     })} 
