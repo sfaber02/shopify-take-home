@@ -93,14 +93,14 @@ button:hover, #submitButton:hover {
     margin: 10px 20px;
 }
 
-.responses p {
+.responsesP {
     margin: 2px 5px;
 }
 
-#promptP {
+.promptP {
     margin-top: 20px;
 }
 
-#responseP {
+.responseP {
     margin-bottom: 20px;
 }

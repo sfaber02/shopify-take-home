@@ -86,9 +86,9 @@ const App = () => {
                     {responses.map(e => {
                         return (
                             <div key={uuidv4()} className="responses">
-                                <p id="promptP"><strong>PROMPT:</strong> {e.prompt}</p>
+                                <p className="promptP"><strong>PROMPT:</strong> {e.prompt}</p>
                                 <br />
-                                <p id='responseP'><strong>RESPONSE:</strong> {e.response}</p>
+                                <p className='responseP'><strong>RESPONSE:</strong> {e.response}</p>
                             </div>
                         )
                     })} 
